@@ -1,3 +1,4 @@
 [submodule "ideatype"]
 	path = ideatype
 	url = https://github.com/ideatype/ideatype.git
+	branch = master
