@@ -1,0 +1,20 @@
+version: "3.2"
+services:
+  web:
+    container_name: ideatype_web
+    image: nginx:latest
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./ideatype:/var/www/ideatype:rw
+      - ./ideatype.conf:/etc/nginx/conf.d/default.conf:cached
+    links:
+      - php
+
+  php:
+    container_name: ideatype_php
+    image: php:7.2.9-fpm
+    volumes:
+      - ./ideatype:/var/www/ideatype:rw
+ 
